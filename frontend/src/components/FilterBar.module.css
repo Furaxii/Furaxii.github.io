@@ -1,0 +1,42 @@
+.bar {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  width: fit-content;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-muted);
+  transition: color 0.15s, background 0.15s;
+  letter-spacing: 0.3px;
+}
+
+.btn:hover {
+  color: var(--text-secondary);
+  background: var(--bg-hover);
+}
+
+.btn.active {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.liveDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--live);
+  flex-shrink: 0;
+  animation: pulse 1.5s ease-in-out infinite;
+}

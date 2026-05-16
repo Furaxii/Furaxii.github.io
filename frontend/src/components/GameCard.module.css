@@ -1,0 +1,110 @@
+.card {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.card:hover {
+  border-color: var(--border-default);
+  background: var(--bg-elevated);
+  transform: translateY(-1px);
+}
+
+.card.active {
+  border-color: var(--game-color);
+  background: var(--bg-elevated);
+}
+
+.card.empty {
+  opacity: 0.45;
+}
+
+.topBar {
+  display: block;
+  height: 3px;
+  background: var(--game-color);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.card.active .topBar,
+.card:hover .topBar {
+  opacity: 1;
+}
+
+.body {
+  padding: 14px 16px 16px;
+}
+
+.abbr {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--game-color);
+  letter-spacing: 1px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* Base badge */
+.badgeLive,
+.badgeSoon,
+.badgeEmpty {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+
+.badgeLive {
+  background: rgba(230, 57, 70, 0.15);
+  color: #ff6b75;
+  border: 1px solid rgba(230, 57, 70, 0.3);
+}
+
+.badgeSoon {
+  background: rgba(69, 123, 157, 0.15);
+  color: #7ab8d6;
+  border: 1px solid rgba(69, 123, 157, 0.3);
+}
+
+.badgeEmpty {
+  background: rgba(255,255,255,0.04);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+.liveDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--live);
+  animation: pulse 1.5s ease-in-out infinite;
+}

@@ -1,0 +1,103 @@
+/* =====================================================
+   EsportHub — Design System & Base Styles
+   Aesthetic : dark industrial, typographie condensée
+   ===================================================== */
+
+:root {
+  /* Couleurs */
+  --bg-base:        #0a0a0b;
+  --bg-surface:     #111114;
+  --bg-elevated:    #18181c;
+  --bg-hover:       #1e1e24;
+
+  --border-subtle:  rgba(255,255,255,0.06);
+  --border-default: rgba(255,255,255,0.10);
+  --border-strong:  rgba(255,255,255,0.18);
+
+  --text-primary:   #f0ede8;
+  --text-secondary: #8a8880;
+  --text-muted:     #4a4845;
+
+  /* Accents par jeu */
+  --color-lol:  #C8A84B;
+  --color-cs2:  #E05A2B;
+  --color-cod:  #4A9E4F;
+  --color-r6:   #2A6FC4;
+
+  /* Status */
+  --live:    #E63946;
+  --soon:    #457B9D;
+  --done:    #3a3a3a;
+
+  /* Typo */
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Spacing */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Scrollbar discrète */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-default); border-radius: 2px; }
+
+/* Sélection de texte */
+::selection { background: rgba(200, 168, 75, 0.25); color: var(--text-primary); }
+
+/* Reset button */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+/* Animation utilitaire */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.fade-in {
+  animation: fadeIn 0.35s ease both;
+}
